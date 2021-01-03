@@ -25,7 +25,7 @@
     <body class="antialiased">
     
    
-        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">莊宜潔的期末網站</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,24 +37,93 @@
         <a class="nav-link" href="#">Features</a>
         <a class="nav-link" href="#">Pricing</a>
         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </div>
-         </div>
-   </div>
-</nav>
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-            @if (Route::has('login'))
+        @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">控制台</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700" style="color: black;
+    margin: 0 5px;
+    font-size: 1em;">登入</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700" style="color: black;
+    margin: 0 5px;
+    font-size: 1em;">註冊</a>
                         @endif
                     @endauth
                 </div>
             @endif
+    </div>
+         </div>
+   </div>
+</nav>
+<nav class="navbar navbar-expand-lg navbar-light navbar_style">
+		    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		    </button>
+		    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+			<ul class="navbar-nav ">
+
+			    <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" style="color:#062646" href="http://dkshop.nkust.edu.tw/nkust_cee/#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    品牌商店介紹
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				    <a class="nav-link" href="http://dkshop.nkust.edu.tw/nkust_cee/cee/index/business">負責業務</a>
+				    <a class="nav-link " href="http://dkshop.nkust.edu.tw/nkust_cee/cee/index/history">發展革沿</a>
+				    <a class="nav-link" href="http://dkshop.nkust.edu.tw/nkust_cee/cee/index/team">服務團隊</a>
+				    <a class="nav-link " href="http://dkshop.nkust.edu.tw/nkust_cee/cee/index/aims">願景目標</a>
+				    <a class="nav-link " href="http://dkshop.nkust.edu.tw/nkust_cee/cee/index/shop">商店設置</a>
+				</div>
+			    </li>
+			    <li class="nav-item">
+				<!-- <a href="http://dkshop.nkust.edu.tw/nkust_cee/cee/index/team" class="nav-link" style='color:#062646'>服務團隊</a> -->
+			    </li>
+			    <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" style="color:#062646" href="http://dkshop.nkust.edu.tw/nkust_cee/#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    最新消息
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+				    <a class="nav-link" href="http://dkshop.nkust.edu.tw/nkust_cee/cee/index/news">最新消息</a>
+				    <a class="nav-link " href="http://dkshop.nkust.edu.tw/nkust_cee/cee/index/activity">活動消息</a>
+				    <a class="nav-link " href="http://dkshop.nkust.edu.tw/nkust_cee/cee/index/honor">獲獎事蹟</a>
+				</div>
+			    </li>
+			    <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" style="color:#062646" href="http://dkshop.nkust.edu.tw/nkust_cee/#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    精選商品
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown2" style="min-width: 14rem;">
+				    <a class="nav-link" href="http://dkshop.nkust.edu.tw/nkust_cee/cee/index/product/1">食品</a>
+				    <a class="nav-link" href="http://dkshop.nkust.edu.tw/nkust_cee/cee/index/product/2">美妝</a>
+				    <a class="nav-link" href="http://dkshop.nkust.edu.tw/nkust_cee/cee/index/product/3">生活</a>
+				</div>
+			    </li>
+			    <li class="nav-item">
+				<a href="http://dkshop.nkust.edu.tw/nkust_cee/cee/index/report" class="nav-link" style="color:#062646">專題報導</a>
+			    </li>
+			    <!--			    <li class="nav-item">
+							    <a href="http://dkshop.nkust.edu.tw/nkust_cee/cee/index/traffic" class="nav-link">交通資訊</a>
+							</li>-->
+			    <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" style="color:#062646" href="http://dkshop.nkust.edu.tw/nkust_cee/#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				    下載專區
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+				    <a class="nav-link" href="http://dkshop.nkust.edu.tw/nkust_cee/cee/index/law">法規下載</a>
+				    <a class="nav-link " href="http://dkshop.nkust.edu.tw/nkust_cee/cee/index/form">表單下載</a>
+				</div>
+			    </li>
+			    <li class="nav-item">
+				<a href="http://dkshop.nkust.edu.tw/nkust_cee/cee/index/contact" class="nav-link" style="color:#062646">聯絡我們</a>
+			    </li>
+			</ul>
+		    </div>
+        </nav>
+        
+        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+            
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
