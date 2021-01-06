@@ -55,13 +55,16 @@
 @endauth
 <table class="table table-striped"> 
     <tr>
-      <th>編號</th><th>馬路消息</th><th>張貼時間</th>
+      <th>編號</th><th>馬路消息</th><th>張貼時間</th><th>編輯</th>
     </tr>
     @foreach ($titles as $item)
     <tr>
       <td> {{$item->id}} </td>
       <td> {{$item->title}} </td>
       <td> {{$item->created_at}} </td>
+      <td>
+      <a href={{'delete/' .$item->id}}><button type="button"  class="btn btn-info">刪除</button></a>
+      </td>
     </tr>
    @endforeach
 </table>

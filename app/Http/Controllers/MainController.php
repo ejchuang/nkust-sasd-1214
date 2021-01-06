@@ -22,6 +22,12 @@ class MainController extends Controller
         return redirect("/");
     }
 
+    function delete($id){
+        $data = Headlines::find($id);
+        $data->delete();
+        return redirect('/');
+     }
+
     function logout(){
         Auth::logout();
         return redirect("/");
