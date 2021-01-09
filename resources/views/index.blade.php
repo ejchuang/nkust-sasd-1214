@@ -178,7 +178,7 @@
   <a class="up-arrow" href="#" data-toggle="tooltip" title="TO TOP">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a><br>
-  <p>Made By EJ</p> 
+  <p>Made By EJ (學習用)</p> 
 </footer>
 </div>
 
