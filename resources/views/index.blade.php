@@ -150,7 +150,7 @@
 <div class="container" style="margin-top:20px">
   <!-- 只有登入者才有權限 -->
 @auth
-<form method='POST' action="/insert/" style="margin-bottom:20px"  onsubmit='check();return false;'id='reg' name='reg'>
+<form method='GET' action="/insert/" style="margin-bottom:20px"  onsubmit='check();return false;'id='reg' name='reg'>
 @csrf
 最新消息 : <input type=text size=40 name=title >
 <input type=submit value="發佈" class="btn btn-success">

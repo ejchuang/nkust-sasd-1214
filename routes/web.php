@@ -7,7 +7,7 @@ use App\Http\Controllers\LottoController;
 Route::get('/', [MainController::class,"index"]);
 Route::get('/mylogout/', [MainController::class,"logout"]);
 Route::get('/lotto/', [LottoController::class,"lotto"]);
-Route::post('/insert/', [MainController::class,"insert"]);
+Route::post('/insert', [MainController::class,"insert"]);
 Route::get('/delete/{id}', [MainController::class,"delete"]);
 // Route::get('/', function () {
 //     return view('index');
