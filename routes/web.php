@@ -13,6 +13,7 @@ Route::get('/delete/{id}', [MainController::class,"delete"]);
 //     return view('index');
 // });
 
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
