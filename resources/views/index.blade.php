@@ -33,6 +33,7 @@
               color: white;
             }
            
+          
             .tableth th {
     background-color: #374C8F;
     color: white !important;
@@ -53,6 +54,43 @@
     color:white;
     padding: 5px;
   }
+th{
+  text-align: center;
+}
+  .toTop {
+    display: none;
+    position: fixed;
+    bottom: 1.5em;
+    width: 46px;
+    height: 46px;
+    border: 0;
+    background: rgba(0,0,0,.6);
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 999;
+    right: 1.5em;
+    color: white;
+    
+}
+
+.toTop i {
+    color: rgba(0,0,0,0);
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 4px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+::-webkit-scrollbar-thumb {
+    background: #286090;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
     </style>
  <script type="text/javascript">
   function check()      {
@@ -64,6 +102,7 @@
     else 
       document.reg.submit();
   }
+ 
 
   </script>
   </head>
@@ -88,17 +127,7 @@
         @endguest 
         @auth
         <li><a href="/mylogout/">登出</a></li>
-        @endauth 
-        <!-- <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Merchandise</a></li>
-            <li><a href="#">Extras</a></li>
-            <li><a href="#">Media</a></li> 
-          </ul>
-        </li> -->
-        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
+        @endauth      
       </ul>
     </div>
   </div>
@@ -156,23 +185,33 @@
 <input type=submit value="發佈" class="btn btn-success">
 </form>
 @endauth
+<div class="table-responsive">
 <table class="table table-striped table-hover"> 
     <tr class="tableth">
-      <th width="100px">編號</th><th>最新消息</th><th width="150px">張貼時間</th>@auth<th width="100px">編輯</th> @endauth 
+      <th width="100px" >編號</th><th>最新消息</th><th width="150px">張貼時間</th>@auth<th width="100px">編輯</th> @endauth 
     </tr>
     @foreach ($titles as $item)
     <tr>
-      <td> {{$item->id}} </td>
+      <td> <strong>{{$item->id}}</strong> </td>
       <td> {{$item->title}} </td>
       <td> {{$item->created_at}} </td>
       @auth
       <td>
-      <a href={{'delete/' .$item->id}}><button type="button"  class="btn btn-info">刪除</button></a>
+      
+      <a href={{'delete/' .$item->id}} ><button onClick="return confirm('你確定要刪除[{{$item->title}}]嗎?')"  class="btn btn-danger">刪除</button></a>
       </td>
       @endauth 
     </tr>
    @endforeach
 </table>
+</div>
+
+<a href="#">
+<button class="toTop" title="回到頂部" style="display: inline-block;">
+  <span style="font-size:20px"><strong>^</strong></span>
+      
+  </button></a>
+ 
 <!-- Footer -->
 <footer class="text-center">
   <a class="up-arrow" href="#" data-toggle="tooltip" title="TO TOP">

@@ -15,11 +15,19 @@ class MainController extends Controller
 
     function insert(Request $req){
         $title = $req ->input('title');
-        //if($title)長度>0才新增
-        $data = new Headlines;
-        $data ->title = $title;
-        $data ->save();
-        return redirect("/");
+        
+        if(empty($title)){
+            return redirect("/");   
+        }else{
+            $data = new Headlines;
+            $data ->title = $title;
+            $data ->save();
+             return redirect("/");
+
+        }
+
+
+       
     }
 
     function delete($id){

@@ -24,6 +24,21 @@
 h1{
   background-color: #ffffcc;
 }
+
+.header1 {
+    width: 100%;
+    height: 68px;
+    background: #ffe401;
+    float: left;
+}
+.header_tl {
+    float: left;
+}
+img {
+    vertical-align: middle;
+    width: 320px;
+    padding-left: 20px;
+}
     .navbar{
       background-color: #2d2d30;
       color: white;
@@ -126,8 +141,6 @@ h1{
         @auth
         <li><a href="/mylogout/">登出</a></li>
         @endauth 
-    
-        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
       </ul>
     </div>
   </div>
@@ -137,11 +150,22 @@ h1{
 
 
 <div class="container" style="margin-bottom:20px" >
+<div class="header1">
+        <div class="header_tl">
+            <a href="#" onclick="window.parent.location.href='index_new.aspx';">
+                <img src="https://www.nkust.edu.tw/var/file/0/1000/img/513/182513897.png"></a>
+        </div>
+    
+       
+    </div>
         <div class="number-container">
         
-        <h1>110/1/9 第110001827期 開獎結果</h1>    
+        <h1>{{ $today }} 第{{$times}}期</h1>   
+        <h2><span style="color:#CC0000">開獎結果</span> 由小到大 : </h2> 
         @foreach ($numbers as $item)
-        <div class="number-item"><span>{{ $item }}</span></div>
+        <div class="number-item">
+        <span>{{ $item }}</span>
+        </div>
         @endforeach
         <h1>特別號</h1>
         <div class="number-item"><span style="color: red;"><strong>{{$lucky_number}}</strong></span></div>
